@@ -1,7 +1,7 @@
 # nginx-modsec-dockergen-letsencrypt
 #Docker containers for automation NGINX configuration with SSL using Let's Encrypt using modsec as a WAF
 
-With this repo you will be able to set up your server with multiple sites using a single NGINX proxy to manage your connections, automating your apps container (port 80 and 443) to auto renew your ssl certificates with Let´s Encrypt.
+With this repo you will be able to set up your server with multiple sites using a single NGINX proxy to manage your connections, automating your apps container (port 80 and 443) to auto renew your ssl certificates with Let´s Encrypt along with this modsecurity is added as a web application firewall which provides another layer of security to the web application.
 
 Something like:
 
@@ -10,10 +10,7 @@ Something like:
 
 ## Why use it?
 
-Using this set up you will be able start a production environment in a few seconds. For each new web project simply start the containers with the option `-e VIRTUAL_HOST=your.domain.com` and you will be ready to go. If you want to use SSL (Let's Encrypt) just add the tag `-e LETSENCRYPT_HOST=your.domain.com`. Done!
-
-Easy and trustworthy!
-
+Using this set up you will be able start a secured production environment in a few seconds. For each new web project simply start the containers with the option `-e VIRTUAL_HOST=your.domain.com` and you will be ready to go. If you want to use SSL (Let's Encrypt) just add the tag `-e LETSENCRYPT_HOST=your.domain.com`, the logs for security events are written with each access to the webapplication.
 
 ## Prerequisites
 
@@ -132,6 +129,10 @@ NGINX_FILES_PATH=./nginx-data
 ```
 
 Your proxy is ready to go!
+## Modsecurity configuration 
+
+The file modsecurity.conf-recommended in te repo holds the initial configuration for modsecurity, and the logs are written in the file modsec_audit.log under /var/log/ of the nginx-web-modsec container.
+For detailed information please refer https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v2.x)#ModSecurityreg_Reference_Manual
 
 ## Starting your web containers
 
