@@ -5,7 +5,7 @@ With this repo you will be able to set up your server with multiple sites using 
 
 Something like:
 
-![Web Proxy environment](https://github.com/evertramos/images/raw/master/webproxy.jpg)
+![Web Proxy environment](https://raw.githubusercontent.com/Nithinbs18/nginx-modsec-dockergen-letsencrypt/master/2020-01-10_12h14_34.jpg)
 
 
 ## Why use it?
