@@ -1,5 +1,5 @@
 # nginx-modsec-dockergen-letsencrypt
-#Docker containers for automation NGINX configuration with SSL using Let's Encrypt using modsec as a WAF
+Docker containers for automation NGINX configuration with SSL using Let's Encrypt using modsec as a WAF
 
 With this repo you will be able to set up your server with multiple sites using a single NGINX proxy to manage your connections, automating your apps container (port 80 and 443) to auto renew your ssl certificates with Let´s Encrypt along with this modsecurity is added as a web application firewall which provides another layer of security to the web application.
 
