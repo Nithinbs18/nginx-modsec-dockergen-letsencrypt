@@ -131,7 +131,7 @@ NGINX_FILES_PATH=./nginx-data
 Your proxy is ready to go!
 ## Modsecurity configuration 
 
-The file modsecurity.conf-recommended in te repo holds the initial configuration for modsecurity, and the logs are written in the file modsec_audit.log under /var/log/ of the nginx-web-modsec container.
+The file modsecurity.conf-recommended in the repo holds the initial configuration for modsecurity, and the logs are written in the file modsec_audit.log under /var/log/ of the nginx-web-modsec container.
 For detailed information please refer https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v2.x)#ModSecurityreg_Reference_Manual
 
 ## Starting your web containers
