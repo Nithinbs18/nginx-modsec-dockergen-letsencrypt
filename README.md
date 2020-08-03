@@ -1,4 +1,5 @@
 # nginx-modsec-dockergen-letsencrypt
+
 Docker containers for automation NGINX configuration with SSL using Let's Encrypt using modsec as a WAF
 
 With this repo you will be able to set up your server with multiple sites using a single NGINX proxy to manage your connections, automating your apps container (port 80 and 443) to auto renew your ssl certificates with Let´s Encrypt along with this modsecurity is added as a web application firewall which provides another layer of security to the web application.
@@ -6,7 +7,6 @@ With this repo you will be able to set up your server with multiple sites using 
 Something like:
 
 ![Web Proxy environment](https://raw.githubusercontent.com/Nithinbs18/nginx-modsec-dockergen-letsencrypt/master/2020-01-10_12h14_34.jpg)
-
 
 ## Why use it?
 
@@ -18,7 +18,6 @@ In order to use this compose file (docker-compose.yml) you must have:
 
 1. docker (https://docs.docker.com/engine/installation/)
 2. docker-compose (https://docs.docker.com/compose/install/)
-
 
 ## How to use it
 
@@ -129,7 +128,8 @@ NGINX_FILES_PATH=./nginx-data
 ```
 
 Your proxy is ready to go!
-## Modsecurity configuration 
+
+## Modsecurity configuration
 
 The file modsecurity.conf-recommended in the repo holds the initial configuration for modsecurity, and the logs are written in the file modsec_audit.log under /var/log/ of the nginx-web-modsec container.
 For detailed information please refer https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v2.x)#ModSecurityreg_Reference_Manual
@@ -156,8 +156,7 @@ docker run -d -e VIRTUAL_HOST=your.domain.com \
               httpd:alpine
 ```
 
-> You don´t need to open port *443* in your container, the certificate validation is managed by the web proxy.
-
+> You don´t need to open port _443_ in your container, the certificate validation is managed by the web proxy.
 
 > Please note that when running a new container to generate certificates with LetsEncrypt (`-e LETSENCRYPT_HOST=your.domain.com`), it may take a few minutes, depending on multiples circumstances.
 
@@ -212,10 +211,9 @@ In some cases you will need to restart the proxy in order to read, as an example
 docker exec -it ${NGINX_WEB} nginx -s reload
 ```
 
-Where *${NGINX_WEB}* is your proxy container name, which in the original `.env` file is set as *nginx-web*.
+Where _\${NGINX_WEB}_ is your proxy container name, which in the original `.env` file is set as _nginx-web_.
 
-
-## Testing your proxy with scripts preconfigured 
+## Testing your proxy with scripts preconfigured
 
 1. Run the script `test.sh` informing your domain already configured in your DNS to point out to your server as follow:
 
@@ -240,13 +238,12 @@ To stop and remove your test container run our `stop_test.sh` script:
 Or simply run:
 
 ```bash
-docker stop test-web && docker rm test-web 
+docker stop test-web && docker rm test-web
 ```
 
 ## Running this Proxy on a Synology NAS
 
 Please checkout this [howto](https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion/blob/master/docs/HOWTO-Synlogy.md).
-
 
 ## Production Environment using Web Proxy and Wordpress
 
@@ -263,6 +260,7 @@ In this repo you will find a docker-compose file to start a production environme
 Without the repositories below this webproxy wouldn´t be possible.
 
 Credits goes to:
+
 - nginx-proxy [@jwilder](https://github.com/jwilder/nginx-proxy)
 - docker-gen [@jwilder](https://github.com/jwilder/docker-gen)
 - docker-letsencrypt-nginx-proxy-companion [@JrCs](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion)
